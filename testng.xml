@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.abof.library.TestngListener" />
+		<listener class-name="com.abof.library.MyNXGTestListner" />
+	</listeners>
+	<test name="Regression" preserve-order="true">
+		<parameter name="device" value="ASUS ZEN PHONE"></parameter>
+		<parameter name="Env" value="PROD"></parameter>
+		<classes>
+			<class name="com.abof.scripts.Sanitysuite" />
+		</classes>
+	</test>
+
+</suite> 

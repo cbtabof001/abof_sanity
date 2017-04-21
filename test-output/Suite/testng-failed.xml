@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="Env" value="PROD"/>
+  <parameter name="device" value="ASUS ZEN PHONE"/>
+  <listeners>
+    <listener class-name="com.abof.library.TestngListener"/>
+    <listener class-name="com.abof.library.MyNXGTestListner"/>
+  </listeners>
+  <test name="Regression">
+    <parameter name="Env" value="PROD"/>
+    <parameter name="device" value="ASUS ZEN PHONE"/>
+    <classes>
+      <class name="com.abof.scripts.Sanitysuite"/>
+    </classes>
+  </test> <!-- Regression -->
+  <test name="Regression(failed)">
+    <parameter name="Env" value="PROD"/>
+    <parameter name="device" value="ASUS ZEN PHONE"/>
+    <classes>
+      <class name="com.abof.scripts.Sanitysuite">
+        <methods>
+          <include name="testFaceBookUserLoginPayment"/>
+          <include name="testGmailUserLoginPayment"/>
+          <include name="setUp"/>
+          <include name="testGuestLoginPayment" invocation-numbers="0"/>
+          <include name="restapp"/>
+          <include name="testNormalUserLoginPayment"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.abof.scripts.Sanitysuite -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Suite] -->
